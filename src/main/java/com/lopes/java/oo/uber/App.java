@@ -10,7 +10,7 @@ import com.lopes.java.oo.uber.modelo.Veiculo;
 import com.lopes.java.oo.uber.pagamento.PagamentoCheque;
 import com.lopes.java.oo.uber.pagamento.PagamentoDinheiro;
 
-public class Uber {
+public class App {
 
 	public static void main(String[] args) {
 

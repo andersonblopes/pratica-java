@@ -4,7 +4,7 @@ public class PagamentoCartao implements Pagamento {
 
 	@Override
 	public void pagar(double valor) {
-		System.out.println("Pagamento de R$ " + valor + " feito no cart�o de cr�dito...");
+		System.out.println("Pagamento de R$ " + valor + " feito com cartão de crédito...");
 	}
 
 	@Override

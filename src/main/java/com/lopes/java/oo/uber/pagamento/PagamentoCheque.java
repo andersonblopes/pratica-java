@@ -4,7 +4,7 @@ public class PagamentoCheque implements Pagamento {
 
 	@Override
 	public void pagar(double valor) {
-		System.out.println("Pagamento de R$ " + valor + " feito em cheque...");
+		System.out.println("Pagamento de R$ " + valor + " feito com cheque...");
 	}
 
 	@Override
