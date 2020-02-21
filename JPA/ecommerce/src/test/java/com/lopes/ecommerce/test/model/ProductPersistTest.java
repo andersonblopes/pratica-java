@@ -12,7 +12,7 @@ public class ProductPersistTest extends AbstractApplicationTest {
     @Test
     public void mustPersistProduct() {
 
-        Product product = new Product(2, "iPhone 11 Pro", "Welcome to the first iPhone powerful enough to be called Pro.", new BigDecimal(999));
+        Product product = new Product(2, "iPhone 11 Pro", "Welcome to the first iPhone powerful enough to be called Pro.", new BigDecimal("999.99"));
 
         entityManager.getTransaction().begin();
         entityManager.persist(product);
@@ -43,21 +43,34 @@ public class ProductPersistTest extends AbstractApplicationTest {
     @Test
     public void mustUpdateProduct() {
 
-        BigDecimal newPrice = new BigDecimal("400.99");
-
-        Product product = entityManager.find(Product.class, 3);
-        product.setPrice(newPrice);
+        Product product = new Product(1, "iPhone 11 Pro", "Welcome to the first iPhone powerful enough to be called Pro.", new BigDecimal("999.99"));
 
         entityManager.getTransaction().begin();
-        entityManager.merge(product);
+         entityManager.merge(product);
         entityManager.getTransaction().commit();
 
         //Force searching the database
         entityManager.clear();
 
-        Product product1Updated = entityManager.find(Product.class, 3);
-
+        Product product1Updated = entityManager.find(Product.class, product.getId());
         Assert.assertNotNull(product1Updated);
+    }
+
+    @Test
+    public void mustUpdateManagedProduct() {
+
+        BigDecimal newPrice = new BigDecimal("899.99");
+
+        Product product = entityManager.find(Product.class, 1);
+
+        entityManager.getTransaction().begin();
+        product.setPrice(newPrice);
+        entityManager.getTransaction().commit();
+
+        //Force searching the database
+        entityManager.clear();
+
+        Product product1Updated = entityManager.find(Product.class, 1);
         Assert.assertEquals(newPrice, product1Updated.getPrice());
     }
 
