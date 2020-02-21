@@ -27,6 +27,23 @@ public class ProductPersistTest extends AbstractApplicationTest {
     }
 
     @Test
+    public void mustPersistProductWithMerge() {
+
+        Product product = new Product(4, "MacBook Pro", "The best for the brightest.", new BigDecimal("2399.00"));
+
+        entityManager.getTransaction().begin();
+        entityManager.merge(product);
+        entityManager.getTransaction().commit();
+
+        //Force searching the database
+        entityManager.clear();
+
+        Product product1Persisted = entityManager.find(Product.class, product.getId());
+
+        Assert.assertNotNull(product1Persisted);
+    }
+
+    @Test
     public void mustRemoveProduct() {
 
         Product product = entityManager.find(Product.class, 3);
