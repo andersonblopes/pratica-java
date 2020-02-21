@@ -28,4 +28,20 @@ public class ProductPersistTest extends AbstractApplicationTest {
         Assert.assertNotNull(product1Persisted);
     }
 
+    @Test
+    public void mustRemoveProduct() {
+
+        Product product = entityManager.find(Product.class, 3);
+
+        entityManager.getTransaction().begin();
+
+        entityManager.remove(product);
+
+        entityManager.getTransaction().commit();
+
+        Product product1Removed = entityManager.find(Product.class, 3);
+
+        Assert.assertNull(product1Removed);
+    }
+
 }

@@ -18,7 +18,7 @@ public class ProductTest extends AbstractApplicationTest {
         Product product = entityManager.getReference(Product.class, 1);
         Assert.assertNotNull(product);
         System.out.println("It only performs a query when a property is used.");
-        Assert.assertEquals("Apple Watch Series 5", product.getName());
+        Assert.assertEquals("iPad", product.getName());
     }
 
     @Test
@@ -29,6 +29,6 @@ public class ProductTest extends AbstractApplicationTest {
         //Restore entity
         entityManager.refresh(product);
 
-        Assert.assertEquals("Apple Watch Series 5", product.getName());
+        Assert.assertEquals("iPad", product.getName());
     }
 }
