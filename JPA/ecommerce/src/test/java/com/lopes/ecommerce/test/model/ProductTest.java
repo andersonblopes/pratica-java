@@ -1,10 +1,11 @@
-package com.lopes.ecommerce.test.config;
+package com.lopes.ecommerce.test.model;
 
 import com.lopes.ecommerce.model.Product;
+import com.lopes.ecommerce.test.config.AbstractApplicationTest;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class ProductTest extends AbstractApplicationTest{
+public class ProductTest extends AbstractApplicationTest {
 
     @Test
     public void mustFindOneProduct(){
