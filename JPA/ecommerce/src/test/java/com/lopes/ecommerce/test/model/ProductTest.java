@@ -17,8 +17,8 @@ public class ProductTest extends AbstractApplicationTest {
     public void mustFindOneProductByReference(){
         Product product = entityManager.getReference(Product.class, 1);
         Assert.assertNotNull(product);
-        System.out.println("Just execute query, when one property is used.");
-        Assert.assertEquals("Kindle", product.getName());
+        System.out.println("It only performs a query when a property is used.");
+        Assert.assertEquals("Apple Watch Series 5", product.getName());
     }
 
     @Test
@@ -29,6 +29,6 @@ public class ProductTest extends AbstractApplicationTest {
         //Restore entity
         entityManager.refresh(product);
 
-        Assert.assertEquals("Kindle", product.getName());
+        Assert.assertEquals("Apple Watch Series 5", product.getName());
     }
 }

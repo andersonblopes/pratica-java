@@ -1,1 +1,1 @@
-INSERT INTO product (id, name, price, description) VALUES (1, 'Kindle', 499.0, 'Discover the new Kindle, now with adjustable built-in lighting, which allows you to read indoors or out, anytime of the day.');
+INSERT INTO product (id, name, price, description) VALUES (1, 'Apple Watch Series 5', 399, 'You’ve never seen a watch like this.');
