@@ -1,0 +1,8 @@
+<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+	<Body>
+		<getCountryRequest
+			xmlns="http://www.digitalis.org/ws/generated">
+			<name>Spain</name>
+		</getCountryRequest>
+	</Body>
+</Envelope>
