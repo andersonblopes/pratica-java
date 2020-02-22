@@ -1,4 +1,4 @@
-package com.lopes.ecommerce.test.model;
+package com.lopes.ecommerce.test.training;
 
 import com.lopes.ecommerce.model.Product;
 import com.lopes.ecommerce.test.config.AbstractApplicationTest;
