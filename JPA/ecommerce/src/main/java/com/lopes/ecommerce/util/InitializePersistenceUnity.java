@@ -1,4 +1,4 @@
-package com.lopes.ecommerce.model.util;
+package com.lopes.ecommerce.util;
 
 import com.lopes.ecommerce.model.Product;
 
