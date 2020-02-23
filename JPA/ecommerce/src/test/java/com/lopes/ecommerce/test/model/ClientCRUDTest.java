@@ -1,6 +1,7 @@
 package com.lopes.ecommerce.test.model;
 
 import com.lopes.ecommerce.model.Client;
+import com.lopes.ecommerce.model.Gender;
 import com.lopes.ecommerce.test.config.AbstractApplicationTest;
 import org.junit.Assert;
 import org.junit.Test;
@@ -9,7 +10,7 @@ public class ClientCRUDTest extends AbstractApplicationTest {
 
     @Test
     public void mustInsertClient() {
-        Client client = new Client(3, "Helena Lopes");
+        Client client = new Client(3, "Helena Lopes", Gender.FEMALE);
 
         entityManager.getTransaction().begin();
         entityManager.persist(client);

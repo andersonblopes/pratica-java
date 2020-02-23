@@ -2,8 +2,10 @@ package com.lopes.ecommerce.model;
 
 import lombok.*;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Getter
 @Setter
@@ -12,11 +14,14 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @ToString
 @Entity
+@Table(name = "category")
 public class Category {
 
     @EqualsAndHashCode.Include
     @Id
     private Integer id;
     private String name;
-    private Integer categoryMain;
+
+    @Column(name = "category_main_id")
+    private Integer categoryMainId;
 }
