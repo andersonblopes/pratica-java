@@ -2,10 +2,7 @@ package com.lopes.ecommerce.model;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -25,7 +22,9 @@ public class CreditCardPayment {
     private Integer orderId;
 
     @Column(name = "payment_status")
+    @Enumerated(EnumType.STRING)
     private PaymentStatus paymentStatus;
+
     private String number;
 
 }

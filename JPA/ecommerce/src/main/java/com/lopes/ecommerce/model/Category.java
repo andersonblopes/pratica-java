@@ -20,6 +20,7 @@ public class Category {
     @EqualsAndHashCode.Include
     @Id
     private Integer id;
+
     private String name;
 
     @Column(name = "category_main_id")

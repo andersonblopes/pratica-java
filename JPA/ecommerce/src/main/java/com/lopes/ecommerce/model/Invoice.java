@@ -24,6 +24,7 @@ public class Invoice {
 
     @Column(name = "order_id")
     private Integer orderId;
+
     private String xml;
 
     @Column(name = "issue_date")

@@ -30,5 +30,6 @@ public class ItemOrder {
 
     @Column(name = "product_price")
     private BigDecimal productPrice;
+
     private Integer amount;
 }

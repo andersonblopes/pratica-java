@@ -2,10 +2,7 @@ package com.lopes.ecommerce.model;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
@@ -35,5 +32,6 @@ public class Order {
     private BigDecimal total;
 
     @Column(name = "order_status")
+    @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
 }
