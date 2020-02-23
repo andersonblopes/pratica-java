@@ -12,12 +12,13 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @ToString
 @Entity
-public class Client {
+public class CreditCardPayment {
 
     @EqualsAndHashCode.Include
     @Id
     private Integer id;
-    private String name;
-    private Gender gender;
+    private Integer orderId;
+    private PaymentStatus paymentStatus;
+    private String number;
 
 }

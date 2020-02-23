@@ -12,12 +12,11 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @ToString
 @Entity
-public class Client {
+public class Stock {
 
     @EqualsAndHashCode.Include
     @Id
     private Integer id;
-    private String name;
-    private Gender gender;
-
+    private Integer productId;
+    private Integer amount;
 }

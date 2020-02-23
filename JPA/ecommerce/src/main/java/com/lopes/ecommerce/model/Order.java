@@ -4,6 +4,8 @@ import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -12,12 +14,14 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @ToString
 @Entity
-public class Client {
+public class Order {
 
     @EqualsAndHashCode.Include
     @Id
     private Integer id;
-    private String name;
-    private Gender gender;
-
+    private LocalDateTime orderDate;
+    private LocalDateTime finishDate;
+    private Integer invoiceId;
+    private BigDecimal total;
+    private OrderStatus orderStatus;
 }

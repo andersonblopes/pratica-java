@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.math.BigDecimal;
 
 @Getter
 @Setter
@@ -12,12 +13,13 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @ToString
 @Entity
-public class Client {
+public class ItemOrder {
 
     @EqualsAndHashCode.Include
     @Id
     private Integer id;
-    private String name;
-    private Gender gender;
-
+    private String orderId;
+    private Integer productId;
+    private BigDecimal productPrice;
+    private Integer amount;
 }
