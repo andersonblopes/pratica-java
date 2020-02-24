@@ -23,7 +23,6 @@ public class EmbeddableClassTest extends AbstractApplicationTest {
 
         Order order = new Order();
         order.setDeliveryAddress(address);
-        order.setId(1);
         order.setOrderDate(LocalDateTime.now());
         order.setOrderStatus(OrderStatus.WAIT);
         order.setTotal(new BigDecimal("25000"));

@@ -13,7 +13,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.TableGenerator;
 
 @Getter
 @Setter
@@ -27,9 +26,7 @@ public class Category {
 
     @EqualsAndHashCode.Include
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE, generator = "table")
-    @TableGenerator(name = "table", table = "seq_category", pkColumnName = "categoryId", pkColumnValue = "category",
-            valueColumnName = "next_val")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String name;

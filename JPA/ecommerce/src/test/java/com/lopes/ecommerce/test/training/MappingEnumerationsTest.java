@@ -11,7 +11,6 @@ public class MappingEnumerationsTest extends AbstractApplicationTest {
     @Test
     public void mustInsertEnumerationValueString() {
         Client client = new Client();
-        client.setId(4);
         client.setName("Josef Smith");
         client.setGender(Gender.MALE);
 

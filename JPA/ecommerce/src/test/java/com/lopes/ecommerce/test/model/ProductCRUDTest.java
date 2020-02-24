@@ -10,8 +10,8 @@ import java.math.BigDecimal;
 public class ProductCRUDTest extends AbstractApplicationTest {
 
     @Test
-    public void mustInsertProduct(){
-        Product product = new Product(100,"Product Test 3","",new BigDecimal("100.00"));
+    public void mustInsertProduct() {
+        Product product = new Product(null, "Product Test 3", "", new BigDecimal("100.00"));
 
         entityManager.getTransaction().begin();
         entityManager.persist(product);
@@ -19,15 +19,15 @@ public class ProductCRUDTest extends AbstractApplicationTest {
 
         entityManager.clear();
 
-        Product productPersisted = entityManager.find(Product.class,product.getId());
+        Product productPersisted = entityManager.find(Product.class, product.getId());
         Assert.assertNotNull(productPersisted);
 
     }
 
     @Test
-    public void mustUpdateProduct(){
+    public void mustUpdateProduct() {
         String newDescription = "Product Test 1 description";
-        Product product = entityManager.find(Product.class,1);
+        Product product = entityManager.find(Product.class, 1);
 
         entityManager.getTransaction().begin();
         product.setDescription(newDescription);
@@ -36,13 +36,13 @@ public class ProductCRUDTest extends AbstractApplicationTest {
         entityManager.clear();
 
         Product productUpdated = entityManager.find(Product.class, 1);
-        Assert.assertEquals(newDescription,productUpdated.getDescription());
+        Assert.assertEquals(newDescription, productUpdated.getDescription());
 
     }
 
     @Test
-    public void mustDeleteProduct(){
-        Product product = entityManager.find(Product.class,1);
+    public void mustDeleteProduct() {
+        Product product = entityManager.find(Product.class, 1);
 
         entityManager.getTransaction().begin();
         entityManager.remove(product);
@@ -54,8 +54,8 @@ public class ProductCRUDTest extends AbstractApplicationTest {
     }
 
     @Test
-    public void mustFindProduct(){
-        Product product = entityManager.find(Product.class,3);
+    public void mustFindProduct() {
+        Product product = entityManager.find(Product.class, 3);
         Assert.assertNotNull(product);
     }
 }

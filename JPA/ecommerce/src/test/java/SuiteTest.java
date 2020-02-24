@@ -1,5 +1,6 @@
 import com.lopes.ecommerce.test.model.ClientCRUDTest;
 import com.lopes.ecommerce.test.model.ProductCRUDTest;
+import com.lopes.ecommerce.test.training.CategoryTest;
 import com.lopes.ecommerce.test.training.EmbeddableClassTest;
 import com.lopes.ecommerce.test.training.MappingEnumerationsTest;
 import com.lopes.ecommerce.test.training.ProductPersistTest;
@@ -13,6 +14,7 @@ import org.junit.runners.Suite;
         ProductPersistTest.class,
         ProductTest.class,
         ProductCRUDTest.class,
-        ClientCRUDTest.class})
+        ClientCRUDTest.class,
+        CategoryTest.class})
 public class SuiteTest {
 }
