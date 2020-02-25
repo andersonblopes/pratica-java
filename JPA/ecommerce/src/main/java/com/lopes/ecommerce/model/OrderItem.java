@@ -23,7 +23,7 @@ import java.math.BigDecimal;
 @ToString
 @Entity
 @Table(name = "item_order")
-public class ItemOrder {
+public class OrderItem {
 
     @EqualsAndHashCode.Include
     @Id
