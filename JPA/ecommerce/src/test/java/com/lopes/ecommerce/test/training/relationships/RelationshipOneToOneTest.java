@@ -7,11 +7,12 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 public class RelationshipOneToOneTest extends AbstractApplicationTest {
 
     @Test
-    public void mustTestRelationshipOneToOne(){
+    public void mustTestRelationshipOneToOneCreditCardPayment(){
 
         Order order = entityManager.find(Order.class, 1);
 
@@ -28,6 +29,27 @@ public class RelationshipOneToOneTest extends AbstractApplicationTest {
 
         Order orderVerified = entityManager.find(Order.class,order.getId());
         Assert.assertNotNull(orderVerified.getCreditCardPayment());
+
+    }
+
+    @Test
+    public void mustTestRelationshipOneToOneInvoice(){
+
+        Order order = entityManager.find(Order.class, 1);
+
+        Invoice invoice = new Invoice();
+        invoice.setIssueDate(new Date());
+        invoice.setXml("");
+        invoice.setOrder(order);
+
+        entityManager.getTransaction().begin();
+        entityManager.persist(invoice);
+        entityManager.getTransaction().commit();
+
+        entityManager.clear();
+
+        Order orderVerified = entityManager.find(Order.class,order.getId());
+        Assert.assertNotNull(orderVerified.getInvoice());
 
     }
 

@@ -35,9 +35,6 @@ public class Order {
     @Column(name = "finish_date")
     private LocalDateTime finishDate;
 
-    @Column(name = "invoice_id")
-    private Integer invoiceId;
-
     private BigDecimal total;
 
     @Column(name = "order_status")
@@ -49,6 +46,9 @@ public class Order {
 
     @OneToOne(mappedBy = "order")
     private CreditCardPayment creditCardPayment;
+
+    @OneToOne(mappedBy = "order")
+    private Invoice invoice;
 
     @Embedded
     private DeliveryAddress deliveryAddress;
