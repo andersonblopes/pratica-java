@@ -11,7 +11,10 @@ public class ProductCRUDTest extends AbstractApplicationTest {
 
     @Test
     public void mustInsertProduct() {
-        Product product = new Product(null, "Product Test 3", "", new BigDecimal("100.00"));
+        Product product = new Product();
+        product.setName("Product Test 3");
+        product.setDescription("");
+        product.setPrice(new BigDecimal("100.00"));
 
         entityManager.getTransaction().begin();
         entityManager.persist(product);

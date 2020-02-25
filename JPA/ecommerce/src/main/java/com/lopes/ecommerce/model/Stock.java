@@ -17,8 +17,6 @@ import javax.persistence.Table;
 @Getter
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@NoArgsConstructor
-@AllArgsConstructor
 @ToString
 @Entity
 @Table(name = "stock")

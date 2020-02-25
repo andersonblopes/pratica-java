@@ -12,7 +12,10 @@ public class ProductPersistTest extends AbstractApplicationTest {
     @Test
     public void mustPersistProduct() {
 
-        Product product = new Product(null, "iPhone 11 Pro", "Welcome to the first iPhone powerful enough to be called Pro.", new BigDecimal("999.99"));
+        Product product = new Product();
+        product.setName("iPhone 11 Pro");
+        product.setDescription("Welcome to the first iPhone powerful enough to be called Pro.");
+        product.setPrice(new BigDecimal("999.99"));
 
         entityManager.getTransaction().begin();
         entityManager.persist(product);
@@ -29,7 +32,11 @@ public class ProductPersistTest extends AbstractApplicationTest {
     @Test
     public void mustPersistProductWithMerge() {
 
-        Product product = new Product(1, "MacBook Pro", "The best for the brightest.", new BigDecimal("2399.00"));
+        Product product = new Product();
+        product.setId(1);
+        product.setName("MacBook Pro");
+        product.setDescription("The best for the brightest.");
+        product.setPrice(new BigDecimal("2399.00"));
 
         entityManager.getTransaction().begin();
         entityManager.merge(product);
@@ -60,7 +67,11 @@ public class ProductPersistTest extends AbstractApplicationTest {
     @Test
     public void mustUpdateProduct() {
 
-        Product product = new Product(1, "iPhone 11 Pro", "Welcome to the first iPhone powerful enough to be called Pro.", new BigDecimal("999.99"));
+        Product product = new Product();
+        product.setId(1);
+        product.setName("iPhone 11 Pro");
+        product.setDescription("Welcome to the first iPhone powerful enough to be called Pro.");
+        product.setPrice(new BigDecimal("999.99"));
 
         entityManager.getTransaction().begin();
         entityManager.merge(product);

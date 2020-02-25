@@ -10,7 +10,9 @@ public class ClientCRUDTest extends AbstractApplicationTest {
 
     @Test
     public void mustInsertClient() {
-        Client client = new Client(null, "Helena Lopes", Gender.FEMALE);
+        Client client = new Client();
+        client.setName("Helena Lopes");
+        client.setGender(Gender.FEMALE);
 
         entityManager.getTransaction().begin();
         entityManager.persist(client);
