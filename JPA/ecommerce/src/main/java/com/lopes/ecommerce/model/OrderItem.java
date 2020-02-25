@@ -7,12 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Getter
@@ -22,7 +17,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @ToString
 @Entity
-@Table(name = "item_order")
+@Table(name = "purchase_order_item")
 public class OrderItem {
 
     @EqualsAndHashCode.Include
@@ -30,11 +25,13 @@ public class OrderItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "order_id")
-    private String orderId;
+    @ManyToOne
+    @JoinColumn(name = "order_id")
+    private Order order;
 
-    @Column(name = "product_id")
-    private Integer productId;
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product;
 
     @Column(name = "product_price")
     private BigDecimal productPrice;
