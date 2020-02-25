@@ -1,5 +1,6 @@
 import com.lopes.ecommerce.test.model.ClientCRUDTest;
 import com.lopes.ecommerce.test.model.ProductCRUDTest;
+import com.lopes.ecommerce.test.training.relationships.RelationshipManyToManyTest;
 import com.lopes.ecommerce.test.training.relationships.SelfRelationshipTest;
 import com.lopes.ecommerce.test.training.relationships.RelationshipManyToOneTest;
 import com.lopes.ecommerce.test.training.relationships.RelationshipOneToManyTest;
@@ -17,6 +18,7 @@ import org.junit.runners.Suite;
         CategoryTest.class,
         RelationshipManyToOneTest.class,
         RelationshipOneToManyTest.class,
-        SelfRelationshipTest.class})
+        SelfRelationshipTest.class,
+        RelationshipManyToManyTest.class})
 public class SuiteTest {
 }

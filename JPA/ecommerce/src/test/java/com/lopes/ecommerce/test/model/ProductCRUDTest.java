@@ -1,5 +1,6 @@
 package com.lopes.ecommerce.test.model;
 
+import com.lopes.ecommerce.model.Order;
 import com.lopes.ecommerce.model.Product;
 import com.lopes.ecommerce.test.config.AbstractApplicationTest;
 import org.junit.Assert;
@@ -46,8 +47,12 @@ public class ProductCRUDTest extends AbstractApplicationTest {
     @Test
     public void mustDeleteProduct() {
         Product product = entityManager.find(Product.class, 1);
+        Order order = entityManager.find(Order.class, 1);
 
         entityManager.getTransaction().begin();
+        order.getOrderItems().forEach(orderItem -> entityManager.remove(orderItem));
+        entityManager.remove(order);
+        product.getCategories().forEach(category -> entityManager.remove(category));
         entityManager.remove(product);
         entityManager.getTransaction().commit();
 

@@ -2,6 +2,8 @@ package com.lopes.ecommerce.test.model;
 
 import com.lopes.ecommerce.model.Client;
 import com.lopes.ecommerce.model.Gender;
+import com.lopes.ecommerce.model.Order;
+import com.lopes.ecommerce.model.Product;
 import com.lopes.ecommerce.test.config.AbstractApplicationTest;
 import org.junit.Assert;
 import org.junit.Test;
@@ -46,6 +48,8 @@ public class ClientCRUDTest extends AbstractApplicationTest {
         Client client = entityManager.find(Client.class, 1);
 
         entityManager.getTransaction().begin();
+        client.getOrders().forEach(order -> order.getOrderItems().forEach(orderItem -> entityManager.remove(orderItem)));
+        client.getOrders().forEach(order -> entityManager.remove(order));
         entityManager.remove(client);
         entityManager.getTransaction().commit();
 
