@@ -1,4 +1,4 @@
-package com.lopes.ecommerce.test.relationships;
+package com.lopes.ecommerce.test.training.relationships;
 
 import com.lopes.ecommerce.model.*;
 import com.lopes.ecommerce.test.config.AbstractApplicationTest;
@@ -8,10 +8,10 @@ import org.junit.Test;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public class RelationshipOneToManyTest extends AbstractApplicationTest {
+public class RelationshipManyToOneTest extends AbstractApplicationTest {
 
     @Test
-    public void mustTestRelationshipOneToManyOrder(){
+    public void mustTestRelationshipManyToOneOrder(){
 
         Client client = entityManager.find(Client.class, 1);
         Order order = new Order();
@@ -27,14 +27,14 @@ public class RelationshipOneToManyTest extends AbstractApplicationTest {
 
         entityManager.clear();
 
-        Client clientVerified = entityManager.find(Client.class,order.getClient().getId());
-        Assert.assertFalse(clientVerified.getOrders().isEmpty());
+        Order orderPersisted = entityManager.find(Order.class,order.getId());
+        Assert.assertNotNull(orderPersisted);
+        Assert.assertNotNull(orderPersisted.getClient());
 
     }
 
     @Test
-    public void mustTestRelationshipOneToManyOrderItem(){
-
+    public void mustTestRelationshipManyToOneOrderItem(){
         Client client = entityManager.find(Client.class, 1);
         Product product = entityManager.find(Product.class, 1);
 
@@ -57,9 +57,10 @@ public class RelationshipOneToManyTest extends AbstractApplicationTest {
 
         entityManager.clear();
 
-        Order orderVerified = entityManager.find(Order.class,order.getId());
-        Assert.assertFalse(orderVerified.getOrderItems().isEmpty());
+        OrderItem orderItemPersisted = entityManager.find(OrderItem.class,orderItem.getId());
+        Assert.assertNotNull(orderItemPersisted);
+        Assert.assertNotNull(orderItemPersisted.getOrder());
+        Assert.assertNotNull(orderItemPersisted.getProduct());
 
     }
-
 }
