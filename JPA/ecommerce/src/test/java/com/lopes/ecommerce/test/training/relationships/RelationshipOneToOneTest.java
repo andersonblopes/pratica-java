@@ -39,7 +39,7 @@ public class RelationshipOneToOneTest extends AbstractApplicationTest {
 
         Invoice invoice = new Invoice();
         invoice.setIssueDate(new Date());
-        invoice.setXml("");
+        invoice.setXml("TESTE");
         invoice.setOrder(order);
 
         entityManager.getTransaction().begin();
@@ -49,6 +49,7 @@ public class RelationshipOneToOneTest extends AbstractApplicationTest {
         entityManager.clear();
 
         Order orderVerified = entityManager.find(Order.class,order.getId());
+        Assert.assertNotNull(orderVerified);
         Assert.assertNotNull(orderVerified.getInvoice());
 
     }
