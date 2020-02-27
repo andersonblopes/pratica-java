@@ -16,7 +16,8 @@ public class CategoryTest extends AbstractApplicationTest {
         entityManager.persist(category);
         entityManager.getTransaction().commit();
 
-        entityManager.clear();
+        entityManager.clear();// Clean cache level 1
+
         Category category1Persisted = entityManager.find(Category.class, category.getId());
         Assert.assertNotNull(category1Persisted);
     }

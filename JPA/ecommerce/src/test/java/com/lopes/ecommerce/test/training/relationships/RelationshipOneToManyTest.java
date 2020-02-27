@@ -29,7 +29,7 @@ public class RelationshipOneToManyTest extends AbstractApplicationTest {
         entityManager.persist(order);
         entityManager.getTransaction().commit();
 
-        entityManager.clear();
+        entityManager.clear();// Clean cache level 1
 
         Client clientVerified = entityManager.find(Client.class,order.getClient().getId());
         Assert.assertFalse(clientVerified.getOrders().isEmpty());
@@ -59,7 +59,7 @@ public class RelationshipOneToManyTest extends AbstractApplicationTest {
         entityManager.persist(orderItem);
         entityManager.getTransaction().commit();
 
-        entityManager.clear();
+        entityManager.clear();// Clean cache level 1
 
         Order orderVerified = entityManager.find(Order.class,order.getId());
         Assert.assertFalse(orderVerified.getOrderItems().isEmpty());

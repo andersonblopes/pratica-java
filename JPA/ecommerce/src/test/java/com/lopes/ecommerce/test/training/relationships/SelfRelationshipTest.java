@@ -22,7 +22,7 @@ public class SelfRelationshipTest extends AbstractApplicationTest {
         entityManager.persist(category);
         entityManager.getTransaction().commit();
 
-        entityManager.clear();
+        entityManager.clear();// Clean cache level 1
 
         Category categoryVerified = entityManager.find(Category.class, category.getId());
         Assert.assertNotNull(categoryVerified.getOwnerCategory());
@@ -44,7 +44,7 @@ public class SelfRelationshipTest extends AbstractApplicationTest {
         entityManager.persist(category);
         entityManager.getTransaction().commit();
 
-        entityManager.clear();
+        entityManager.clear();// Clean cache level 1
 
         Category categoryOwnerVerified = entityManager.find(Category.class, categoryOwner.getId());
         Assert.assertFalse(categoryOwnerVerified.getCategories().isEmpty());

@@ -26,7 +26,7 @@ public class RelationshipOneToOneTest extends AbstractApplicationTest {
         entityManager.persist(creditCardPayment);
         entityManager.getTransaction().commit();
 
-        entityManager.clear();
+        entityManager.clear();// Clean cache level 1
 
         Order orderVerified = entityManager.find(Order.class,order.getId());
         Assert.assertNotNull(orderVerified.getCreditCardPayment());
@@ -47,7 +47,7 @@ public class RelationshipOneToOneTest extends AbstractApplicationTest {
         entityManager.persist(invoice);
         entityManager.getTransaction().commit();
 
-        entityManager.clear();
+        entityManager.clear();// Clean cache level 1
 
         Order orderVerified = entityManager.find(Order.class,order.getId());
         Assert.assertNotNull(orderVerified);

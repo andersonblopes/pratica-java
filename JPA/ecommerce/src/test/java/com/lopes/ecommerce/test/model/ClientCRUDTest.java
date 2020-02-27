@@ -10,6 +10,7 @@ public class ClientCRUDTest extends AbstractApplicationTest {
 
     @Test
     public void mustInsertClient() {
+
         Client client = new Client();
         client.setName("Helena Lopes");
         client.setGender(Gender.FEMALE);
@@ -18,7 +19,7 @@ public class ClientCRUDTest extends AbstractApplicationTest {
         entityManager.persist(client);
         entityManager.getTransaction().commit();
 
-        entityManager.clear();
+        entityManager.clear();// Clean cache level 1
 
         Client clientPersisted = entityManager.find(Client.class, client.getId());
         Assert.assertNotNull(clientPersisted);
@@ -27,14 +28,16 @@ public class ClientCRUDTest extends AbstractApplicationTest {
 
     @Test
     public void mustUpdateClient() {
+
         String newName = "Elaine Cristina Lopes";
+
         Client client = entityManager.find(Client.class, 2);
 
         entityManager.getTransaction().begin();
         client.setName(newName);
         entityManager.getTransaction().commit();
 
-        entityManager.clear();
+        entityManager.clear();// Clean cache level 1
 
         Client clientUpdated = entityManager.find(Client.class, 2);
         Assert.assertEquals(newName, clientUpdated.getName());
@@ -43,12 +46,16 @@ public class ClientCRUDTest extends AbstractApplicationTest {
 
     @Test
     public void mustDeleteClient() {
+
         Client client = entityManager.find(Client.class, 1);
 
         entityManager.getTransaction().begin();
+
         client.getOrders().forEach(order -> order.getOrderItems().forEach(orderItem -> entityManager.remove(orderItem)));
         client.getOrders().forEach(order -> entityManager.remove(order));
+
         entityManager.remove(client);
+
         entityManager.getTransaction().commit();
 
         Client clientRemoved = entityManager.find(Client.class, 1);
@@ -57,6 +64,7 @@ public class ClientCRUDTest extends AbstractApplicationTest {
 
     @Test
     public void mustFindClient() {
+        
         Client client = entityManager.find(Client.class, 2);
         Assert.assertNotNull(client);
     }

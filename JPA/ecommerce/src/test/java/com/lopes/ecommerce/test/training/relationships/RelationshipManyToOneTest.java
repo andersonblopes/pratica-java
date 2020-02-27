@@ -29,7 +29,7 @@ public class RelationshipManyToOneTest extends AbstractApplicationTest {
         entityManager.persist(order);
         entityManager.getTransaction().commit();
 
-        entityManager.clear();
+        entityManager.clear();// Clean cache level 1
 
         Order orderPersisted = entityManager.find(Order.class,order.getId());
         Assert.assertNotNull(orderPersisted);
@@ -59,7 +59,7 @@ public class RelationshipManyToOneTest extends AbstractApplicationTest {
         entityManager.persist(orderItem);
         entityManager.getTransaction().commit();
 
-        entityManager.clear();
+        entityManager.clear();// Clean cache level 1
 
         OrderItem orderItemPersisted = entityManager.find(OrderItem.class,orderItem.getId());
         Assert.assertNotNull(orderItemPersisted);

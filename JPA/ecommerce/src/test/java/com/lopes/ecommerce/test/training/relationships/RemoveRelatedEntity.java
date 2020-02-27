@@ -18,7 +18,7 @@ public class RemoveRelatedEntity extends AbstractApplicationTest {
         entityManager.remove(order);
         entityManager.getTransaction().commit();
 
-        entityManager.clear();
+        entityManager.clear();// Clean cache level 1
 
         Order orderVerified = entityManager.find(Order.class, 1);
         Assert.assertNull(orderVerified);

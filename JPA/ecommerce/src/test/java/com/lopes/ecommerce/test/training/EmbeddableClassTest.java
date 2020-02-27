@@ -15,6 +15,7 @@ public class EmbeddableClassTest extends AbstractApplicationTest {
 
     @Test
     public void mustPersistEmbeddableClass() {
+
         Client client = entityManager.find(Client.class, 1);
 
         DeliveryAddress address = new DeliveryAddress();
@@ -35,9 +36,10 @@ public class EmbeddableClassTest extends AbstractApplicationTest {
         entityManager.persist(order);
         entityManager.getTransaction().commit();
 
-        entityManager.clear();
+        entityManager.clear();// Clean cache level 1
 
         Order orderPersisted = entityManager.find(Order.class, order.getId());
+
         Assert.assertNotNull(orderPersisted);
         Assert.assertNotNull(orderPersisted.getClient());
         Assert.assertEquals(orderPersisted.getDeliveryAddress().getPostalZipCode(), order.getDeliveryAddress().getPostalZipCode());

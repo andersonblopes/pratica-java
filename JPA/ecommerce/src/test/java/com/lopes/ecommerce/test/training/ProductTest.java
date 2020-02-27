@@ -9,13 +9,16 @@ public class ProductTest extends AbstractApplicationTest {
 
     @Test
     public void mustFindOneProduct(){
+
         Product product = entityManager.find(Product.class, 1);
         Assert.assertNotNull(product);
     }
 
     @Test
     public void mustFindOneProductByReference(){
+
         Product product = entityManager.getReference(Product.class, 1);
+
         Assert.assertNotNull(product);
         System.out.println("It only performs a query when a property is used.");
         Assert.assertEquals("iPad", product.getName());

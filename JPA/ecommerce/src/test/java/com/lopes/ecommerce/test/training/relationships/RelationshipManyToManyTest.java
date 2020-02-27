@@ -24,7 +24,7 @@ public class RelationshipManyToManyTest extends AbstractApplicationTest {
         entityManager.persist(category);
         entityManager.getTransaction().commit();
 
-        entityManager.clear();
+        entityManager.clear(); // Clean cache level 1
 
         Category categoryVerified = entityManager.find(Category.class,category.getId());
         Assert.assertFalse(categoryVerified.getProducts().isEmpty());

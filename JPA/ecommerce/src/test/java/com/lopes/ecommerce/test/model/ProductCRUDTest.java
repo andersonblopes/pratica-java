@@ -37,7 +37,7 @@ public class ProductCRUDTest extends AbstractApplicationTest {
         product.setDescription(newDescription);
         entityManager.getTransaction().commit();
 
-        entityManager.clear();
+        entityManager.clear(); // Clean cache level 1
 
         Product productUpdated = entityManager.find(Product.class, 1);
         Assert.assertEquals(newDescription, productUpdated.getDescription());

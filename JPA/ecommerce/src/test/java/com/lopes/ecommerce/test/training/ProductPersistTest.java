@@ -22,7 +22,7 @@ public class ProductPersistTest extends AbstractApplicationTest {
         entityManager.getTransaction().commit();
 
         //Force searching the database
-        entityManager.clear();
+        entityManager.clear();// Clean cache level 1
 
         Product product1Persisted = entityManager.find(Product.class, product.getId());
 
@@ -43,7 +43,7 @@ public class ProductPersistTest extends AbstractApplicationTest {
         entityManager.getTransaction().commit();
 
         //Force searching the database
-        entityManager.clear();
+        entityManager.clear();// Clean cache level 1
 
         Product product1Persisted = entityManager.find(Product.class, product.getId());
 
@@ -78,7 +78,7 @@ public class ProductPersistTest extends AbstractApplicationTest {
         entityManager.getTransaction().commit();
 
         //Force searching the database
-        entityManager.clear();
+        entityManager.clear();// Clean cache level 1
 
         Product product1Updated = entityManager.find(Product.class, product.getId());
         Assert.assertEquals("iPhone 11 Pro", product1Updated.getName());
@@ -96,7 +96,7 @@ public class ProductPersistTest extends AbstractApplicationTest {
         entityManager.getTransaction().commit();
 
         //Force searching the database
-        entityManager.clear();
+        entityManager.clear();// Clean cache level 1
 
         Product product1Updated = entityManager.find(Product.class, 1);
         Assert.assertEquals(newPrice, product1Updated.getPrice());
