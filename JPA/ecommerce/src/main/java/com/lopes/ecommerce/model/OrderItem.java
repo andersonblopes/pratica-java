@@ -28,11 +28,11 @@ public class OrderItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne
+    @ManyToOne(optional = false) // Optional = false --> JPA execute inner join instead left outer join)
     @JoinColumn(name = "order_id")
     private Order order;
 
-    @ManyToOne
+    @ManyToOne(optional = false) // Optional = false --> JPA execute inner join instead left outer join)
     @JoinColumn(name = "product_id")
     private Product product;
 

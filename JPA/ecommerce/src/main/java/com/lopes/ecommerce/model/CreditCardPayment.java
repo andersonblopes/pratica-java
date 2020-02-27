@@ -29,7 +29,7 @@ public class CreditCardPayment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToOne
+    @OneToOne(optional = false) // Optional = false --> JPA execute inner join instead left outer join)
     @JoinColumn(name = "order_id")
     private Order order;
 
