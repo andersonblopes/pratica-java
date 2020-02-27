@@ -1,13 +1,11 @@
 package com.lopes.ecommerce.test.training.relationships;
 
-import com.lopes.ecommerce.model.*;
+import com.lopes.ecommerce.model.Category;
+import com.lopes.ecommerce.model.Product;
 import com.lopes.ecommerce.test.config.AbstractApplicationTest;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.Arrays;
 import java.util.Collections;
 
 public class RelationshipManyToManyTest extends AbstractApplicationTest {

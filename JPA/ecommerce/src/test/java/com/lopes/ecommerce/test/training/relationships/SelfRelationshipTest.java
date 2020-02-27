@@ -1,6 +1,6 @@
 package com.lopes.ecommerce.test.training.relationships;
 
-import com.lopes.ecommerce.model.*;
+import com.lopes.ecommerce.model.Category;
 import com.lopes.ecommerce.test.config.AbstractApplicationTest;
 import org.junit.Assert;
 import org.junit.Test;

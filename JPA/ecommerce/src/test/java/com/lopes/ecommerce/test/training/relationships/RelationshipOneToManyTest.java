@@ -1,6 +1,10 @@
 package com.lopes.ecommerce.test.training.relationships;
 
-import com.lopes.ecommerce.model.*;
+import com.lopes.ecommerce.model.Client;
+import com.lopes.ecommerce.model.Order;
+import com.lopes.ecommerce.model.OrderItem;
+import com.lopes.ecommerce.model.OrderStatus;
+import com.lopes.ecommerce.model.Product;
 import com.lopes.ecommerce.test.config.AbstractApplicationTest;
 import org.junit.Assert;
 import org.junit.Test;

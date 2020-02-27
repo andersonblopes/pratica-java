@@ -1,12 +1,13 @@
 package com.lopes.ecommerce.test.training.relationships;
 
-import com.lopes.ecommerce.model.*;
+import com.lopes.ecommerce.model.CreditCardPayment;
+import com.lopes.ecommerce.model.Invoice;
+import com.lopes.ecommerce.model.Order;
+import com.lopes.ecommerce.model.PaymentStatus;
 import com.lopes.ecommerce.test.config.AbstractApplicationTest;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.Date;
 
 public class RelationshipOneToOneTest extends AbstractApplicationTest {
