@@ -4,6 +4,7 @@ import com.lopes.springcloudmysql.model.Contact;
 import com.lopes.springcloudmysql.model.repository.ContactRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -48,6 +49,15 @@ public class ContactController {
                     record.setPhone(contact.getPhone());
                     Contact updated = repository.save(record);
                     return ResponseEntity.ok().body(updated);
+                }).orElse(ResponseEntity.notFound().build());
+    }
+
+    @DeleteMapping(path = {"/{id}"})
+    public ResponseEntity<?> delete(@PathVariable("id") long id) {
+        return repository.findById(id)
+                .map(record -> {
+                    repository.deleteById(id);
+                    return ResponseEntity.ok().build();
                 }).orElse(ResponseEntity.notFound().build());
     }
 
