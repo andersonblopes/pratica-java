@@ -19,8 +19,11 @@ import java.util.List;
 @RequestMapping({"/contacts"})
 public class ContactController {
 
-    @Autowired
     private ContactRepository repository;
+
+    ContactController(ContactRepository contactRepository) {
+        this.repository = contactRepository;
+    }
 
     @GetMapping
     public List<Contact> findAll() {
