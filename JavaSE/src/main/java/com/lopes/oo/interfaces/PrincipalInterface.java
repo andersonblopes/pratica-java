@@ -1,6 +1,6 @@
-package com.lopes.interfac;
+package com.lopes.oo.interfaces;
 
-public class PrincipalInterfac {
+public class PrincipalInterface {
 
 	public static void main(String[] args) {
 		GatoImpl gato = new GatoImpl();

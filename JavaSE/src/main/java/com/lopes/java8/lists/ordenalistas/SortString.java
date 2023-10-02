@@ -1,4 +1,4 @@
-package com.lopes8;
+package com.lopes.java8.lists.ordenalistas;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,8 +9,7 @@ import java.util.function.Consumer;
 /**
  * The type Sort string.
  */
-public class SortString
-{
+public class SortString {
 
     /**
      * The entry point of application.
