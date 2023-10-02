@@ -1,4 +1,4 @@
-package com.lopes.java.ufersa.aula02;
+package com.lopes.ufersa.aula02;
 
 public class Pessoa {
 

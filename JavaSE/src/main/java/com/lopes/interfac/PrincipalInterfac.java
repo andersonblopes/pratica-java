@@ -1,4 +1,4 @@
-package com.lopes.java.interfac;
+package com.lopes.interfac;
 
 public class PrincipalInterfac {
 

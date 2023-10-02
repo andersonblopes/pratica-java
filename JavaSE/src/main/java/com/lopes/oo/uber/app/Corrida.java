@@ -1,9 +1,9 @@
-package com.lopes.java.oo.uber.app;
+package com.lopes.oo.uber.app;
 
-import com.lopes.java.oo.uber.modelo.Pessoa;
-import com.lopes.java.oo.uber.modelo.Uber;
-import com.lopes.java.oo.uber.modelo.Veiculo;
-import com.lopes.java.oo.uber.pagamento.Pagamento;
+import com.lopes.oo.uber.modelo.Pessoa;
+import com.lopes.oo.uber.modelo.Uber;
+import com.lopes.oo.uber.modelo.Veiculo;
+import com.lopes.oo.uber.pagamento.Pagamento;
 
 public class Corrida {
 

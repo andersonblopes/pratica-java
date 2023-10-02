@@ -1,4 +1,4 @@
-package com.lopes.java.ufersa.aula04;
+package com.lopes.ufersa.aula04;
 
 public class Aranha extends Animal {
 

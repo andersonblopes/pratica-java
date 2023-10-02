@@ -1,4 +1,4 @@
-package com.lopes.java.numbers;
+package com.lopes.numbers;
 
 import java.math.BigDecimal;
 

@@ -1,4 +1,4 @@
-package com.lopes.java.swing;
+package com.lopes.swing;
 
 import javax.swing.JOptionPane;
 

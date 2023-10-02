@@ -1,14 +1,14 @@
-package com.lopes.java.oo.uber;
+package com.lopes.oo.uber;
 
-import com.lopes.java.oo.uber.app.Corrida;
-import com.lopes.java.oo.uber.modelo.Condutor;
-import com.lopes.java.oo.uber.modelo.Passageiro;
-import com.lopes.java.oo.uber.modelo.Pessoa;
-import com.lopes.java.oo.uber.modelo.UberBlack;
-import com.lopes.java.oo.uber.modelo.UberNormal;
-import com.lopes.java.oo.uber.modelo.Veiculo;
-import com.lopes.java.oo.uber.pagamento.PagamentoCheque;
-import com.lopes.java.oo.uber.pagamento.PagamentoDinheiro;
+import com.lopes.oo.uber.app.Corrida;
+import com.lopes.oo.uber.modelo.Condutor;
+import com.lopes.oo.uber.modelo.Passageiro;
+import com.lopes.oo.uber.modelo.Pessoa;
+import com.lopes.oo.uber.modelo.UberBlack;
+import com.lopes.oo.uber.modelo.UberNormal;
+import com.lopes.oo.uber.modelo.Veiculo;
+import com.lopes.oo.uber.pagamento.PagamentoCheque;
+import com.lopes.oo.uber.pagamento.PagamentoDinheiro;
 
 public class App {
 

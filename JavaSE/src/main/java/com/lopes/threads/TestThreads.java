@@ -1,4 +1,4 @@
-package com.lopes.java.threads;
+package com.lopes.threads;
 
 public class TestThreads {
 

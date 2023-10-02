@@ -1,4 +1,4 @@
-package com.lopes.java8;
+package com.lopes8;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package com.lopes.java.envioemail.commonsmail;
+package com.lopes.envioemail.commonsmail;
 
 import org.apache.commons.mail.EmailAttachment;
 import org.apache.commons.mail.EmailException;

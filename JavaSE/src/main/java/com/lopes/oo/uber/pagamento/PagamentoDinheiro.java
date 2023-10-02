@@ -1,4 +1,4 @@
-package com.lopes.java.oo.uber.pagamento;
+package com.lopes.oo.uber.pagamento;
 
 public class PagamentoDinheiro implements Pagamento {
 

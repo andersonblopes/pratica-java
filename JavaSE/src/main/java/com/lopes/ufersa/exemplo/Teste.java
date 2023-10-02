@@ -1,4 +1,4 @@
-package com.lopes.java.ufersa.exemplo;
+package com.lopes.ufersa.exemplo;
 
 public class Teste {
 

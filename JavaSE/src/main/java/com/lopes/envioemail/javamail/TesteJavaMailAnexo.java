@@ -1,4 +1,4 @@
-package com.lopes.java.envioemail.javamail;
+package com.lopes.envioemail.javamail;
 
 import java.util.Date;
 import java.util.Properties;

@@ -1,4 +1,4 @@
-package com.lopes.java.ordenalistas;
+package com.lopes.ordenalistas;
 
 public class Cliente implements Comparable<Cliente> {
 

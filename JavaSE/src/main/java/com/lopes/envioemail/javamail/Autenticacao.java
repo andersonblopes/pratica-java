@@ -1,4 +1,4 @@
-package com.lopes.java.envioemail.javamail;
+package com.lopes.envioemail.javamail;
 
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;

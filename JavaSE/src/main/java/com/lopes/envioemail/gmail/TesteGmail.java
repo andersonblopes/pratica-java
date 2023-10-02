@@ -1,4 +1,4 @@
-package com.lopes.java.envioemail.gmail;
+package com.lopes.envioemail.gmail;
 
 import java.util.Date;
 import java.util.Properties;
@@ -11,7 +11,7 @@ import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import com.lopes.java.envioemail.javamail.Autenticacao;
+import com.lopes.envioemail.javamail.Autenticacao;
 
 public class TesteGmail {
 	private static final String SERVIDOR_SMTP = "smtp.gmail.com";

@@ -1,4 +1,4 @@
-package com.lopes.java.heranca;
+package com.lopes.heranca;
 
 public class Cachorro extends Animal {
 

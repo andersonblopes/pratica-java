@@ -1,4 +1,4 @@
-package com.lopes.java.ufersa.avaliacao;
+package com.lopes.ufersa.avaliacao;
 
 public class Tanque {
 

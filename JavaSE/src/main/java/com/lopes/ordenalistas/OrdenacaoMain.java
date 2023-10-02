@@ -1,4 +1,4 @@
-package com.lopes.java.ordenalistas;
+package com.lopes.ordenalistas;
 
 import java.util.ArrayList;
 import java.util.Collections;
